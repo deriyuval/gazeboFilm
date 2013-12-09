@@ -49,39 +49,47 @@ int main(int argc, char **argv)
     		case 'i':
     			msg.linear.x=1;
     			vel_pub.publish(msg);
+			c=' ';
     			break;
     		case 'j':
     			msg.linear.y=1;
     			vel_pub.publish(msg);
+			c=' ';
     			break;
     		case 'l':
     			msg.linear.y=-1;
     			vel_pub.publish(msg);
-    			break;
+			c=' ';    			
+			break;
     		case 'k':
     			msg.linear.x=-1;
     			vel_pub.publish(msg);
+			c=' ';
     			break;
     		case 't':
     			msg.linear.z=1;
     			vel_pub.publish(msg);
-    			break;
+			c=' ';    			
+			break;
     		case 'g':
     			msg.linear.z=-1;
     			vel_pub.publish(msg);
+			c=' ';
     			break;
     		case 'o':
     			msg.angular.z=-1;
     			vel_pub.publish(msg);
-    			break;
+			c=' ';    			
+			break;
     		case 'u':
     			msg.angular.z=1;
     			vel_pub.publish(msg);
-    			break;
+ 			c=' ';   			
+			break;
     	}
         ros::spinOnce();
         rate.sleep();
-        c=' ';
+        
     }else{
     	  //stop all activity
         vel_pub.publish(msg);
